@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="2">
+        <tr>
+            <td>id</td>
+            <td>name</td>
+            <td>age</td>
+        </tr>
+        {% for i in members %}
+        <tr>
+            <td>{{i.id}}</td>
+            <td>{{i.name}}</td>
+            <td>{{i.age}}</td>
+            <td><a href="delete/{{i.id}}">del</a></td>
+        </tr>
+    
+    {% endfor %}
+</table>
+<a href="add/">Add</a>
+</body>
+</html>
