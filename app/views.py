@@ -38,3 +38,15 @@ def delete(request,id):
     n=new.objects.get(id=id)
     n.delete()
     return HttpResponseRedirect(reverse('index4'))
+def update(request,id):
+    n=new.objects.get(id=id)
+    template=loader.get_template('update.html')
+    return HttpResponse(template.render({"member":n},request))
+def updaterecord(request,id):
+    n=new.objects.get(id=id)
+    x=request.POST['name']
+    y=request.POST['age']
+    n.name=x
+    n.age=y
+    n.save()
+    return HttpResponseRedirect(reverse('index4'))
